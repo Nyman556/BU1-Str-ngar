@@ -1,12 +1,14 @@
-﻿namespace strängar;
+﻿using System.Security.Cryptography;
+
+namespace strängar;
 
 class Program
 {
     static void Main(string[] args) {
 
 
-    Övning1();
-    // Övning2();
+    // Övning1();
+     Övning2();
     // Övning3();
     // Övning4();
     // Övning5();
@@ -33,7 +35,19 @@ class Program
     static void Övning2() {
         string desc = "Hämta in en massa nummer som representerar åldrar genom en Console.ReadLine(). Det skall finnas endast en Console.ReadLine(). Addera alla åldrar och skriv ut summan med Console.WriteLine().";
         Console.WriteLine($"desc: {desc}");
-
+        string? input = Console.ReadLine();
+        char[] possibleSeporators = {',', '.', ' ', '!', '!'};
+        int result = 0;
+        string[] ageArr = Array.Empty<string>();
+        foreach(char seporator in possibleSeporators) {
+            if(input.Contains(seporator)) {
+                ageArr = input.Split(seporator);
+            } 
+        }
+        foreach(string age in ageArr) {
+            result += Convert.ToInt32(age);
+        }
+        Console.WriteLine($"resultat: {result}");
     }
 
 
