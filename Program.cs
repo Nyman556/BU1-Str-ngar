@@ -10,7 +10,7 @@ class Program
     // Övning1();
     // Övning2();
     // Övning3();
-    // Övning4();
+    Övning4();
     // Övning5();
     // Övning6();
     // Övning7();
@@ -62,6 +62,9 @@ class Program
     static void Övning4() {
         string desc = "Hämta in en sträng med Console.ReadLine(). Skriv ut det första tecknet i strängen.";
         Console.WriteLine($"desc: {desc}");
+        string input = Console.ReadLine();
+        char[] inputArr = input.ToCharArray();
+        Console.WriteLine(inputArr[0]);
     }
 
 
