@@ -9,7 +9,7 @@ class Program
 
     // Övning1();
     // Övning2();
-     Övning3();
+    // Övning3();
     // Övning4();
     // Övning5();
     // Övning6();
@@ -50,13 +50,18 @@ class Program
         Console.WriteLine($"resultat: {result}");
     }
 
-        static void Övning3() {
-        string desc = "Hämta in en massa nummer som representerar åldrar genom en Console.ReadLine(). Det skall finnas endast en Console.ReadLine(). Addera alla åldrar och skriv ut summan med Console.WriteLine().";
+    static void Övning3() {
+        string desc = "Hämta in en sträng med Console.ReadLine(). Skriv ut samma text men i uppercase. Hämta in en sträng med Console.ReadLine(). Skriv ut samma text men i lowercase.";
         Console.WriteLine($"desc: {desc}");
         string? input = Console.ReadLine().ToUpper();
         string? input2 = Console.ReadLine().ToLower();
         Console.WriteLine(input);
         Console.WriteLine(input2);
+    }
+
+    static void Övning4() {
+        string desc = "Hämta in en sträng med Console.ReadLine(). Skriv ut det första tecknet i strängen.";
+        Console.WriteLine($"desc: {desc}");
     }
 
 
