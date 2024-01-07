@@ -10,8 +10,8 @@ class Program
     // Övning1();
     // Övning2();
     // Övning3();
-    Övning4();
-    // Övning5();
+    // Övning4();
+     Övning5();
     // Övning6();
     // Övning7();
     // Övning11();
@@ -65,6 +65,27 @@ class Program
         string input = Console.ReadLine();
         char[] inputArr = input.ToCharArray();
         Console.WriteLine(inputArr[0]);
+    }
+
+    static void Övning5() {
+        string desc = "Hämta in en sträng med Console.ReadLine(). Skriv ut antalet gången tecknet a förekommer i strängen. Hämta in en sträng med Console.ReadLine(). Skriv ut index på alla a-tecken som förekommer i strängen.";
+        Console.WriteLine($"desc: {desc}");
+        char check = 'a';
+        int count = 0;
+        string? input = Console.ReadLine();
+        char[] inputArr = input.ToCharArray();
+        List<int> indexes = new List<int>();
+        for(int i = 0; i < inputArr.Length; i++) {
+            if(inputArr[i] == check){
+                count++;
+                indexes.Add(i);
+            }
+        }
+        Console.WriteLine(count);
+        foreach(int i in indexes) {
+            Console.WriteLine($"found at idx: {i}");
+        }
+
     }
 
 
