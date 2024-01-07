@@ -14,7 +14,8 @@ class Program
     // Övning5();
     // Övning6();
     // Övning7();
-    Övning8();
+    // Övning8();
+    Övning9();
 
 
 
@@ -92,7 +93,6 @@ class Program
         string? input = Console.ReadLine();
         string[] inputArr = input.Split(" ");
         Console.WriteLine(inputArr[inputArr.Length - 1]);
-
     }
 
     static void Övning7() {
@@ -100,14 +100,22 @@ class Program
         Console.WriteLine($"desc: {desc}");
         string? input = Console.ReadLine();
         Console.WriteLine($"Jag sade nyss \"{input}\"");
-
     }
 
     static void Övning8() {
         string br = Environment.NewLine;
         string desc = "Skriv ut följande med en enda Console.WriteLine():" + br + "Jag" + br + "gillar" + br + "glass.";
         Console.WriteLine($"desc: {desc}");
+    }
 
+    static void Övning9() {
+        string desc = "Hämta in en sträng från konsolen. Skriv ut samma sträng men i flippad ordning. Exempel: Hej -> jeH | Glass -> ssalG";
+        Console.WriteLine($"desc: {desc}");
+        string? input = Console.ReadLine();
+        char[] inputArr = input.ToCharArray();
+        Array.Reverse(inputArr);
+        string inputReversed = new string(inputArr);
+        Console.WriteLine(inputReversed);
     }
 
 
