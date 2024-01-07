@@ -12,8 +12,8 @@ class Program
     // Övning3();
     // Övning4();
     // Övning5();
-     Övning6();
-    // Övning7();
+    // Övning6();
+     Övning7();
     // Övning11();
     // Övning12();
     // övning13();
@@ -94,6 +94,14 @@ class Program
         string? input = Console.ReadLine();
         string[] inputArr = input.Split(" ");
         Console.WriteLine(inputArr[inputArr.Length - 1]);
+
+    }
+
+    static void Övning7() {
+        string desc = "Hämta in en sträng med Console.ReadLine(). Skriv ut följande: Jag sade nyss '<input>'. ... där input representerar det du skrev in till Console.ReadLine(). skall ingå i strängen.";
+        Console.WriteLine($"desc: {desc}");
+        string? input = Console.ReadLine();
+        Console.WriteLine($"Jag sade nyss \"{input}\"");
 
     }
 
