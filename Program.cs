@@ -11,8 +11,8 @@ class Program
     // Övning2();
     // Övning3();
     // Övning4();
-     Övning5();
-    // Övning6();
+    // Övning5();
+     Övning6();
     // Övning7();
     // Övning11();
     // Övning12();
@@ -85,6 +85,15 @@ class Program
         foreach(int i in indexes) {
             Console.WriteLine($"found at idx: {i}");
         }
+
+    }
+
+    static void Övning6() {
+        string desc = "Hämta in en sträng med Console.ReadLine(). Skriv ut det sista ordet i strängen (ord definieras är som text som separeras av mellanslag).";
+        Console.WriteLine($"desc: {desc}");
+        string? input = Console.ReadLine();
+        string[] inputArr = input.Split(" ");
+        Console.WriteLine(inputArr[inputArr.Length - 1]);
 
     }
 
