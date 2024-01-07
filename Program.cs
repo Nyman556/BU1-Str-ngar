@@ -13,10 +13,8 @@ class Program
     // Övning4();
     // Övning5();
     // Övning6();
-     Övning7();
-    // Övning11();
-    // Övning12();
-    // övning13();
+    // Övning7();
+    Övning8();
 
 
 
@@ -102,6 +100,13 @@ class Program
         Console.WriteLine($"desc: {desc}");
         string? input = Console.ReadLine();
         Console.WriteLine($"Jag sade nyss \"{input}\"");
+
+    }
+
+    static void Övning8() {
+        string br = Environment.NewLine;
+        string desc = "Skriv ut följande med en enda Console.WriteLine():" + br + "Jag" + br + "gillar" + br + "glass.";
+        Console.WriteLine($"desc: {desc}");
 
     }
 
