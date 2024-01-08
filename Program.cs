@@ -15,7 +15,15 @@ class Program
     // Övning6();
     // Övning7();
     // Övning8();
-    Övning9();
+    // Övning9();
+
+    /* 
+    string a = "Hej, jag gillar glass. Vad gillar du?";
+    string b = "Jag brukar programmera. Är du en programmerare också?";
+    string c = "Du måste handla mat medans jag städar huset.";
+
+    Console.WriteLine(Övning10(c)); 
+    */
 
 
 
@@ -116,6 +124,34 @@ class Program
         Array.Reverse(inputArr);
         string inputReversed = new string(inputArr);
         Console.WriteLine(inputReversed);
+    }
+
+        static string Övning10(string input) {
+        string desc = "Skriv en funktion som byter plats på varje jag och du i en sträng. Använd följande strängar för att testa:";
+        Console.WriteLine($"desc: {desc}");
+        string[] inputArr = input.Split(" ");
+        for(int i = 0; i < inputArr.Length; i++) {
+            if(inputArr[i] == "du") {
+                inputArr[i] = "jag";
+            }else if (inputArr[i] == "Du") {
+                inputArr[i] = "Jag";
+            }else if (inputArr[i] == "du?") {
+                inputArr[i] = "jag?";
+            }else if(inputArr[i] == "jag") {
+                inputArr[i] = "du";
+            }else if(inputArr[i] == "Jag") {
+                inputArr[i] = "Du";
+            }else if(inputArr[i] == "jag?") {
+                inputArr[i] = "jag?";
+            }
+        }
+        string result = string.Join(" ", inputArr);
+        return result;
+    }
+
+    static void Övning11() {
+        string desc = "Skriv en funktion som slumpar text på X tecken. Ta in antalet tecken som du ska slumpa med en parameter. Om man skickar in 4 så ska den slumpa 4 tecken, exempelvis: aueh.";
+        Console.WriteLine($"desc: {desc}");
     }
 
 
