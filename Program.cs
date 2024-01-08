@@ -259,13 +259,15 @@ class Program
     }
 
     // övning 17
-    string input = "Hello World!";
+    /*
+     string input = "Hello World!";
 
     string uppercase = ToUpper(input);
     Console.WriteLine("stora: " + uppercase);
 
     string lowercase = ToLower(input);
     Console.WriteLine("små: " + lowercase);
+    */
 
     static string ToUpper(string input)
     {
@@ -308,6 +310,24 @@ class Program
         }
 
     }
+
+
+
+    // Console.WriteLine(Övning18("hej jag heter ironman. jag gillar glass."));
+    static string Övning18(string input) {
+        string desc = "Skriv en funktion som byter ut den första bokstaven i varje mening med en stor bokstav. Exempel: hej jag heter ironman. jag gillar glass. -> Hej jag heter ironman. Jag gillar glass.";
+        Console.WriteLine($"desc: {desc}");
+        char[] charArray = input.ToCharArray();
+        for (int i = 0; i < charArray.Length - 1; i++)
+        {
+            if (charArray[i] == '.' && char.IsLetter(charArray[i + 2]))
+            {
+                charArray[i + 2] = char.ToUpper(charArray[i + 2]);
+            }
+        }
+        return new string(charArray);
+    }
+
 
 
 }
