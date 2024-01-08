@@ -29,6 +29,8 @@ class Program
 
     // Console.WriteLine(Övning12("fan va godis är gott!"));
 
+    Console.WriteLine(Övning13("Glass är gott.", "är"));
+
 
     static void Övning1() {
         string desc = "Hämta in två strängar med Console.ReadLine(). Programmet skall skriva De är samma om strängarna är samma (innehåller exakt samma text) och De är inte samma om de inte innehåller exakt samma text.";
@@ -182,6 +184,19 @@ class Program
             input = input.Replace(replacement.Original, replacement.Replacement, StringComparison.OrdinalIgnoreCase);
         }
         return input;
+    }
+
+        static int Övning13(string content, string sequence) {
+        string desc = "Skriv en funktion som tar in två parametrar: en sträng (content) och en till sträng (sequence). Funktionen skall räkna ut och returnera hur många gånger sekvensen sequence förekommer i content.";
+        Console.WriteLine($"desc: {desc}");
+        int count = 0;
+        string[] contentArr = content.Split(" ");
+        foreach(string word in contentArr) {
+            if(word == sequence) {
+                count++;
+            }
+        }
+        return count;
     }
 
 
