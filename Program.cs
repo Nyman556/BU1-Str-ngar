@@ -29,7 +29,9 @@ class Program
 
     // Console.WriteLine(Övning12("fan va godis är gott!"));
 
-    Console.WriteLine(Övning13("Glass är gott.", "är"));
+    // Console.WriteLine(Övning13("Glass är gott.", "är"));
+    
+    Console.WriteLine(Övning14("Glass Är Gott."));
 
 
     static void Övning1() {
@@ -186,13 +188,30 @@ class Program
         return input;
     }
 
-        static int Övning13(string content, string sequence) {
+    static int Övning13(string content, string sequence) {
         string desc = "Skriv en funktion som tar in två parametrar: en sträng (content) och en till sträng (sequence). Funktionen skall räkna ut och returnera hur många gånger sekvensen sequence förekommer i content.";
         Console.WriteLine($"desc: {desc}");
         int count = 0;
         string[] contentArr = content.Split(" ");
+
         foreach(string word in contentArr) {
             if(word == sequence) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    static int Övning14(string input) {
+        string desc = "Skriv en funktion som tar in en parameter (en sträng). Funktionen skall returnera antalet stora bokstäver som finns i strängen.";
+        Console.WriteLine($"desc: {desc}");
+
+        int count = 0;
+        char[] inputArr = input.ToCharArray();
+        foreach (char letter in inputArr)
+        {
+            if (char.IsUpper(letter))
+            {
                 count++;
             }
         }
