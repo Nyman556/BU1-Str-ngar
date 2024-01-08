@@ -25,6 +25,7 @@ class Program
     Console.WriteLine(Övning10(c)); 
     */
 
+    Console.WriteLine(Övning11(5));
 
 
     static void Övning1() {
@@ -149,9 +150,19 @@ class Program
         return result;
     }
 
-    static void Övning11() {
+    static string Övning11(int input) {
         string desc = "Skriv en funktion som slumpar text på X tecken. Ta in antalet tecken som du ska slumpa med en parameter. Om man skickar in 4 så ska den slumpa 4 tecken, exempelvis: aueh.";
         Console.WriteLine($"desc: {desc}");
+        string letters = "qwertyuiopåasdfghjklöäzxcvbnm";
+        List<char> resultArr = new List<char>();
+        Random random = new Random();
+
+        for(int i = 0; i < input; i++) {
+            resultArr.Add(letters[random.Next(0, letters.Length)]);
+        }
+
+        string result = new string(resultArr.ToArray());
+        return result;
     }
 
 
