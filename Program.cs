@@ -45,7 +45,7 @@ class Program
     }
     */
 
-    Console.WriteLine(Övning16("hej1jag2gillar43glass."));
+    // Console.WriteLine(Övning16("hej1jag2gillar43glass."));
 
 
     static void Övning1() {
@@ -258,8 +258,56 @@ class Program
         return result;
     }
 
+    // övning 17
+    string input = "Hello World!";
 
+    string uppercase = ToUpper(input);
+    Console.WriteLine("stora: " + uppercase);
 
+    string lowercase = ToLower(input);
+    Console.WriteLine("små: " + lowercase);
+
+    static string ToUpper(string input)
+    {
+        char[] letters = input.ToCharArray();
+
+        for (int i = 0; i < letters.Length; i++)
+        {
+            if (IsLowerCase(letters[i]))
+            {
+                letters[i] = (char)(letters[i] - 'a' + 'A');
+            }
+        }
+
+        return new string(letters);
+    }
+    
+    static string ToLower(string input)
+    {
+    char[] letters = input.ToCharArray();
+
+        for (int i = 0; i < letters.Length; i++)
+        {
+            if (IsUpperCase(letters[i]))
+            {
+                letters[i] = (char)(letters[i] - 'A' + 'a');
+            }
+        }
+
+        return new string(letters);
+    }
+
+    static bool IsUpperCase(char c)
+        {
+            return c >= 'A' && c <= 'Z';
+        }
+
+    static bool IsLowerCase(char c)
+        {
+            return c >= 'a' && c <= 'z';
+        }
 
     }
+
+
 }
