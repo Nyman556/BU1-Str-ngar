@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.Globalization;
+using System.Security.Cryptography;
 
 namespace strängar;
 
@@ -33,6 +34,7 @@ class Program
     
     // Console.WriteLine(Övning14("Glass Är Gott."));
 
+    /*
     if (Övning15("500", out int result))
     {
         Console.WriteLine("Parsed: " + result);
@@ -41,6 +43,9 @@ class Program
     {
         Console.WriteLine("Could not parse.");
     }
+    */
+
+    Console.WriteLine(Övning16("hej1jag2gillar43glass."));
 
 
     static void Övning1() {
@@ -231,6 +236,26 @@ class Program
         string desc = "Skriv en egen enkel parsing funktion som gör om strängar till integers (inga decimaltal).";
         Console.WriteLine($"desc: {desc}");
         return int.TryParse(input, out result);
+    }
+
+    static int Övning16(string input) {
+        string desc = "Skriv en funktion som tar in en sträng och returnerar summan av alla siffror som finns i strängen. Exempel: 'hej1jag2gillar43glass' -> 1 + 2 + 4 + 3 = 10";
+        Console.WriteLine($"desc: {desc}");
+        List<int> nummer = new List<int>();
+        int result = 0;
+        char[] inputArr = input.ToCharArray();
+
+        foreach(char item in inputArr) {
+
+            if (int.TryParse(item.ToString(), out int parseResult)) {
+                nummer.Add(parseResult);
+            }
+        }
+
+        foreach(int item in nummer) {
+            result += item;
+        }
+        return result;
     }
 
 
