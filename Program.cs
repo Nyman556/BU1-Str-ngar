@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using System.Security.Cryptography;
+using System.Text;
 
 namespace strängar;
 
@@ -48,6 +49,17 @@ class Program
     // Console.WriteLine(Övning16("hej1jag2gillar43glass."));
 
 
+
+    /* övning 19
+    string input = "this string is encrypted";
+
+    string encryptedText = Encrypt(input, 1);
+    Console.WriteLine("Krypterad: " + encryptedText);
+
+    string decryptedText = Decrypt(encryptedText, 1);
+    Console.WriteLine("Dekrypterad: " + decryptedText);
+    */
+    
     static void Övning1() {
         string desc = "Hämta in två strängar med Console.ReadLine(). Programmet skall skriva De är samma om strängarna är samma (innehåller exakt samma text) och De är inte samma om de inte innehåller exakt samma text.";
         Console.WriteLine($"desc: {desc}");
@@ -329,5 +341,35 @@ class Program
     }
 
 
+    // övning 19
+    static string Encrypt(string input, int shift){
+        StringBuilder encryptedText = new StringBuilder();
+
+        foreach (char character in input)
+        {
+            if (char.IsLetter(character))
+            {
+                char encryptedChar = (char)(character + shift);
+
+                if ((char.IsUpper(character) && encryptedChar > 'Z') ||
+                    (char.IsLower(character) && encryptedChar > 'z'))
+                {
+                    encryptedChar = (char)(encryptedChar - 26);
+                }
+
+                encryptedText.Append(encryptedChar);
+            }
+            else
+            {
+                encryptedText.Append(character);
+            }
+        }
+
+        return encryptedText.ToString();
+    }
+
+    static string Decrypt(string input, int shift) {
+        return Encrypt(input, -shift);
+    }
 
 }
