@@ -31,7 +31,16 @@ class Program
 
     // Console.WriteLine(Övning13("Glass är gott.", "är"));
     
-    Console.WriteLine(Övning14("Glass Är Gott."));
+    // Console.WriteLine(Övning14("Glass Är Gott."));
+
+    if (Övning15("500", out int result))
+    {
+        Console.WriteLine("Parsed: " + result);
+    }
+    else
+    {
+        Console.WriteLine("Could not parse.");
+    }
 
 
     static void Övning1() {
@@ -217,6 +226,14 @@ class Program
         }
         return count;
     }
+
+    static bool Övning15(string input, out int result) {
+        string desc = "Skriv en egen enkel parsing funktion som gör om strängar till integers (inga decimaltal).";
+        Console.WriteLine($"desc: {desc}");
+        return int.TryParse(input, out result);
+    }
+
+
 
 
     }
