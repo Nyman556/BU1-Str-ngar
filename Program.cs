@@ -25,7 +25,9 @@ class Program
     Console.WriteLine(Övning10(c)); 
     */
 
-    Console.WriteLine(Övning11(5));
+    // Console.WriteLine(Övning11(5));
+
+    // Console.WriteLine(Övning12("fan va godis är gott!"));
 
 
     static void Övning1() {
@@ -163,6 +165,23 @@ class Program
 
         string result = new string(resultArr.ToArray());
         return result;
+    }
+
+
+    static string Övning12(string input) {
+        string desc = "Skriv en funktion som byter ut svordomar och fula ord i en sträng mot finare ord.";
+        Console.WriteLine($"desc: {desc}");
+        var curseWords = new[]
+        {
+            new { Original = "fan", Replacement = "yay" },
+            new { Original = "jävla", Replacement = "woohoo" }
+        };
+
+                foreach (var replacement in curseWords)
+        {
+            input = input.Replace(replacement.Original, replacement.Replacement, StringComparison.OrdinalIgnoreCase);
+        }
+        return input;
     }
 
 
